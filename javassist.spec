@@ -6,19 +6,19 @@
 
 Name:           %{?scl_prefix}javassist
 Version:        3.18.1
-Release:        4.1%{?dist}
+Release:        4.2%{?dist}
 Summary:        The Java Programming Assistant provides simple Java bytecode manipulation
 Group:          Development/Libraries
 License:        MPLv1.1 or LGPLv2+ or ASL 2.0
-URL:            http://www.csg.is.titech.ac.jp/~chiba/%{pkg_name}/
+URL:            http://jboss-javassist.github.io/javassist
 BuildArch:      noarch
 
 Source0:        http://github.com/jboss-%{pkg_name}/%{pkg_name}/archive/%{upstream_version}.tar.gz
 
 Patch0:         0001-Remove-usage-of-junit.awtui-and-junit.swingui.patch
 
-BuildRequires:  %{?scl_prefix_java_common}maven-local
-BuildRequires:  %{?scl_prefix_java_common}mvn(junit:junit)
+BuildRequires:  %{?scl_prefix}maven-local
+BuildRequires:  %{?scl_prefix}mvn(junit:junit)
 BuildRequires:  %{?scl_prefix_maven}mvn(org.apache.felix:maven-bundle-plugin)
 BuildRequires:  %{?scl_prefix_maven}mvn(org.apache.maven.plugins:maven-source-plugin)
 
@@ -37,7 +37,6 @@ other editors.
 %package javadoc
 Summary:           Javadocs for javassist
 Group:             Documentation
-Requires:          %{?scl_prefix_java_common}jpackage-utils
 
 %description javadoc
 javassist development documentation.
@@ -76,6 +75,10 @@ mkdir runtest
 %doc License.html
 
 %changelog
+* Thu Feb 04 2016 Michal Srb <msrb@redhat.com> - 3.18.1-4.2
+- Update prefix scl_prefix_java_common -> scl_prefix
+- Update URL
+
 * Tue Jul 07 2015 Mat Booth <mat.booth@redhat.com> - 3.18.1-4.1
 - Import latest from Fedora
 
