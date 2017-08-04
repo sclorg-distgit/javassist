@@ -5,7 +5,7 @@
 
 Name:           %{?scl_prefix}javassist
 Version:        3.18.1
-Release:        6.1%{?dist}
+Release:        6.2%{?dist}
 Summary:        The Java Programming Assistant provides simple Java bytecode manipulation
 Group:          Development/Libraries
 License:        MPLv1.1 or LGPLv2+ or ASL 2.0
@@ -66,6 +66,9 @@ mkdir runtest
 %doc License.html
 
 %changelog
+* Thu Jun 22 2017 Michael Simacek <msimacek@redhat.com> - 3.18.1-6.2
+- Mass rebuild 2017-06-22
+
 * Wed Jun 21 2017 Java Maintainers <java-maint@redhat.com> - 3.18.1-6.1
 - Automated package import and SCL-ization
 
